@@ -44,10 +44,6 @@ public class GornerTableModel extends AbstractTableModel {
     public Object getValueAt(int row, int col) {
         double result = 0.0;
         double x = from + step * row;
-         /*if(col==2){
-            for (int i = 0; i < coefficients.length; i++)
-          return 5;
-        }*/
         if (col == 1) {
             for (int i = 0; i < coefficients.length; i++)
                 result += Math.pow(x, coefficients.length - 1 - i) * coefficients[i];
@@ -59,7 +55,7 @@ public class GornerTableModel extends AbstractTableModel {
 
     public String getColumnName(int col) {
         if (col == 2)
-            return "Значение X в обратном порядке";
+            return "Взаимно простые?";
         else if (col == 1)
             return "Значение многочлена";
         else

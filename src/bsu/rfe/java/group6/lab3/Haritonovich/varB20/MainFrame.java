@@ -130,7 +130,7 @@ public class MainFrame extends JFrame {
         hboxRange.setPreferredSize(new Dimension(
                 new Double(hboxRange.getMaximumSize().getWidth()).intValue(),
                 new Double(hboxRange.getMinimumSize().getHeight()).intValue() * 2));
-        getContentPane().add(hboxRange, BorderLayout.NORTH);
+        getContentPane().add(hboxRange, BorderLayout.SOUTH);
         JButton buttonCalc = new JButton("Вычислить");
         buttonCalc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ev) {
@@ -184,7 +184,7 @@ public class MainFrame extends JFrame {
         hboxButtons.setPreferredSize(new Dimension(new
                 Double(hboxButtons.getMaximumSize().getWidth()).intValue(), new
                 Double(hboxButtons.getMinimumSize().getHeight()).intValue() * 2));
-        getContentPane().add(hboxButtons, BorderLayout.SOUTH);
+        getContentPane().add(hboxButtons, BorderLayout.NORTH);
         hBoxResult = Box.createHorizontalBox();
         hBoxResult.add(new JPanel());
         getContentPane().add(hBoxResult, BorderLayout.CENTER);

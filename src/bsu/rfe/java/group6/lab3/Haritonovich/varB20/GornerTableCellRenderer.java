@@ -9,6 +9,7 @@ import java.text.NumberFormat;
 import javax.swing.*;
 import javax.swing.table.TableCellRenderer;
 
+
 public class GornerTableCellRenderer implements TableCellRenderer {
     private JPanel panel = new JPanel();
     private JLabel label = new JLabel();
@@ -29,7 +30,6 @@ public class GornerTableCellRenderer implements TableCellRenderer {
     }
 
 
-
     public Component getTableCellRendererComponent(JTable table,
                                                    Object value, boolean isSelected, boolean hasFocus, int row, int col) {
 
@@ -40,12 +40,11 @@ public class GornerTableCellRenderer implements TableCellRenderer {
             int Col1 = (int) col1;
             col1 -= Col1;
             String COL1 =  formatter.format(col1);
-            System.out.println(col1 + " " + Col1 + " " + COL1);
             if (COL1.length() - 2 <= 3) panel.setBackground(Color.GREEN);
             else panel.setBackground(Color.WHITE);
         }
 
-        if(col==2){
+     /*   if(col==2){
             double x = (Double) table.getValueAt(row ,0);
             double y = (Double) table.getValueAt(row ,1);
             int X = (int) x;
@@ -53,9 +52,9 @@ public class GornerTableCellRenderer implements TableCellRenderer {
             boolean check;
             if (X == 0 || Y == 0) check = true;
             else {
-                while (X != Y) {
-                    if (X > Y) X -= Y;
-                    else Y -= X;
+                while (Math.abs(X) != Math.abs(Y)) {
+                    if (Math.abs(X) > Y) X -= Y;
+                    else Y -= Math.abs(X);
                 }
                 if (X == 1) check = true;
                 else check = false;
@@ -66,11 +65,11 @@ public class GornerTableCellRenderer implements TableCellRenderer {
             panel.add(jCheckBox);
             panel.setBackground(Color.WHITE);
             return panel;
-        }else{
+        }*/else{
             panel.remove(0);
             panel.add(label);
         }
-        if(col == 1) {
+        if(col == 0) {
             if (needle != null && needle.equals(formattedDouble)) {
                 panel.setBackground(Color.RED);
             }
